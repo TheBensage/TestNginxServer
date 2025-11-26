@@ -1,0 +1,29 @@
+# NodeApp: Ignore Node.js specific files
+NodeApp/node_modules/
+NodeApp/.env
+NodeApp/dist/
+NodeApp/build/
+NodeApp/.npm/
+NodeApp/.vscode/
+
+# DotNetApp: Ignore .NET specific files
+DotNetApp/bin/
+DotNetApp/obj/
+DotNetApp/.vs/
+DotNetApp/*.user
+DotNetApp/*.userosscache
+DotNetApp/*.suo
+DotNetApp/.idea/
+
+# Docker files (optional, adjust based on what you want to ignore)
+docker-compose.override.yml
+docker-compose.override.yml.backup
+*.env
+
+# Nginx: Ignore Nginx logs or temporary files (if any)
+nginx/*.log
+nginx/temp/
+
+# OS-specific files
+.DS_Store  # macOS specific
+Thumbs.db  # Windows specific
