@@ -7,7 +7,17 @@ app.MapGet("/", () => "Hello from .NET App!");
 app.MapGet("/api", () => "This is the .NET /api endpoint!");
 app.MapGet("/api/test", () => "This is the .NET /api/test endpoint!");
 
-app.Urls.Add("http://0.0.0.0:5000");
+bool useCustomUrl = builder.Configuration["USE_CUSTOM_URL"] == "true";
+
+if (!useCustomUrl)
+{
+    app.Urls.Add("http://0.0.0.0:5000"); // for Docker
+}
+else
+{
+    app.Urls.Add("https://localhost:5000/"); // for Visual Studio
+}
+
 
 app.Run();
 
